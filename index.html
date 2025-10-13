@@ -1,204 +1,329 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Kanzlei Schlimpert — Oederan</title>
-<meta name="description" content="Anwaltskanzlei Schlimpert in Oederan — fachkundige, persönliche Rechtsberatung." />
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#111;
-  --dark:#f7f7f7;
-  --muted:#ccc;
-  --accent:#c9a84a;
-  --max-width:1100px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Lato",system-ui,Arial;background:var(--bg);color:var(--dark);line-height:1.6}
-a{color:var(--accent);text-decoration:none}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anwaltskanzlei Schlimpert</title>
 
-header{background:#111;padding:28px 16px;position:relative;text-align:center}
-.logo img{height:160px;width:auto;animation:fadeIn 1s ease-in-out}
-.warning-box{
-  position:absolute;top:10px;right:10px;background:#c00;color:#fff;
-  font-size:14px;padding:6px 12px;border-radius:6px;font-weight:700;
-  animation: blink 2s infinite;
-}
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.4}}
-@keyframes fadeIn{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}
+  <style>
+    :root {
+      --bg-dark: #111;
+      --bg-light: #1c1c1c;
+      --text-light: #f5f5f5;
+      --gold: #c9a84a;
+      --white: #fff;
+    }
+    * {margin:0;padding:0;box-sizing:border-box;}
+    body {
+      font-family: "Lato", sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      overflow-x:hidden;
+    }
+    h1,h2,h3 {
+      font-family: "Playfair Display", serif;
+      color: var(--white);
+    }
+    a {text-decoration:none;color:inherit;}
 
-.hero{
-  min-height:56vh;background:linear-gradient(180deg,#111,#1a1a1a);
-  display:flex;align-items:center;justify-content:center;text-align:center;padding:48px 16px;flex-direction:column;
-}
-.hero .slogan{font-family:"Playfair Display",serif;font-size:28px;margin-bottom:12px;color:var(--accent)}
-.hero p{max-width:820px;color:var(--muted)}
-.cta{display:inline-block;background:var(--accent);color:#111;padding:12px 22px;border-radius:6px;font-weight:700;margin-top:18px;transition:transform 0.3s}
-.cta:hover{transform:scale(1.05)}
+    /* Loader */
+    #loader {
+      position:fixed;
+      top:0;left:0;width:100%;height:100%;
+      background:var(--bg-dark);
+      color:var(--gold);
+      display:flex;flex-direction:column;
+      justify-content:center;align-items:center;
+      z-index:9999;
+      font-family:"Playfair Display", serif;
+      font-size:1.1rem;
+    }
+    #loader p {opacity:0;transition:opacity 0.12s ease;}
+    #content {opacity:0;transform:translateY(50px);transition:opacity 0.8s ease, transform 0.8s ease;}
 
-section{padding:56px 16px;opacity:0;transform:translateY(20px);transition:opacity 0.8s ease, transform 0.8s ease}
-section.visible{opacity:1;transform:translateY(0)}
+    /* Header */
+    header {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:40px 20px 20px;
+      background:var(--bg-dark);
+    }
+    header img {
+      background:var(--white);
+      padding:10px 30px;
+      border-radius:16px;
+      box-shadow:0 4px 20px rgba(0,0,0,0.3);
+      height:120px;
+      width:auto;
+    }
 
-h2{font-family:"Playfair Display",serif;font-size:26px;margin:0 0 12px}
-p.lead{color:var(--muted);max-width:860px;margin-bottom:16px}
+    /* Hero */
+    .hero {
+      text-align:center;
+      padding:100px 20px 80px;
+      background:var(--bg-dark);
+    }
+    .hero h1 {
+      font-size:2rem;
+      color:var(--gold);
+      margin-bottom:15px;
+    }
+    .hero p {
+      max-width:600px;
+      margin:0 auto 30px;
+      line-height:1.6;
+      color:var(--text-light);
+    }
+    .btn {
+      background:var(--gold);
+      color:var(--bg-dark);
+      padding:12px 28px;
+      border-radius:30px;
+      font-weight:600;
+      transition:transform .3s ease, box-shadow .3s ease;
+    }
+    .btn:hover {
+      transform:translateY(-3px);
+      box-shadow:0 4px 10px rgba(201,168,74,0.4);
+    }
 
-.about{display:flex;gap:32px;align-items:center;flex-wrap:wrap}
-.about .text{flex:1}
-.values{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-.value{background:#1c1c1c;padding:12px;border-radius:8px;min-width:140px;text-align:center;transition:transform 0.3s}
-.value:hover{transform:scale(1.05)}
+    section {
+      padding:80px 20px;
+      text-align:center;
+      background:var(--bg-light);
+    }
+    section:nth-child(even) {
+      background:var(--bg-dark);
+    }
+    section h2 {
+      font-size:1.8rem;
+      color:var(--gold);
+      margin-bottom:20px;
+    }
+    section p {
+      max-width:700px;
+      margin:0 auto;
+      line-height:1.7;
+      color:var(--text-light);
+      margin-bottom:25px;
+    }
 
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.service{background:#1c1c1c;padding:18px;border-radius:8px;border:1px solid #333;transition:transform 0.3s}
-.service:hover{transform:scale(1.03)}
+    .values {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:25px;
+      margin-top:30px;
+    }
+    .value-item {
+      background:var(--bg-dark);
+      border-radius:16px;
+      padding:20px 30px;
+      flex:1 1 200px;
+      max-width:220px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.3);
+      transition:transform .3s ease;
+    }
+    .value-item:hover {transform:translateY(-5px);}
+    .value-item span {font-size:2rem;display:block;margin-bottom:10px;color:var(--gold);}
+    .value-item p {margin:0;font-weight:500;}
 
-.contact-grid{display:grid;grid-template-columns:1fr 360px;gap:24px}
-form{background:#1c1c1c;padding:18px;border-radius:8px;border:1px solid #333}
-label{display:block;margin-bottom:6px;font-weight:600;color:var(--dark)}
-input,textarea{width:100%;padding:10px;border:1px solid #333;border-radius:6px;margin-bottom:12px;background:#111;color:var(--dark)}
-button[type=submit]{background:var(--accent);color:#111;padding:12px 16px;border:none;border-radius:6px;font-weight:700;cursor:pointer;transition:transform 0.3s}
-button[type=submit]:hover{transform:scale(1.05)}
+    .areas {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      margin-top:40px;
+    }
+    .area {
+      background:var(--bg-dark);
+      border-radius:16px;
+      padding:25px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.3);
+      transition:transform .3s ease;
+    }
+    .area:hover {transform:translateY(-5px);}
+    .area h3 {color:var(--gold);margin-bottom:10px;}
+    .area p {font-size:0.95rem;}
 
-footer{background:#111;color:#bbb;padding:24px 0;text-align:center}
-footer a{color:var(--accent)}
+    form {
+      display:flex;
+      flex-direction:column;
+      gap:15px;
+      max-width:400px;
+      margin:30px auto 0;
+    }
+    input, textarea {
+      background:var(--bg-dark);
+      border:1px solid var(--gold);
+      border-radius:8px;
+      padding:12px;
+      color:var(--text-light);
+      font-size:1rem;
+    }
+    textarea {height:120px;resize:none;}
+    button {
+      background:var(--gold);
+      color:var(--bg-dark);
+      border:none;
+      padding:12px;
+      border-radius:30px;
+      font-weight:600;
+      cursor:pointer;
+      transition:transform .3s ease, box-shadow .3s ease;
+    }
+    button:hover {
+      transform:translateY(-3px);
+      box-shadow:0 4px 10px rgba(201,168,74,0.4);
+    }
 
-@media(max-width:600px){
-  .hero .slogan{font-size:20px}
-  section{padding:32px 12px}
-  .contact-grid{grid-template-columns:1fr}
-}
+    footer {
+      background:var(--bg-dark);
+      text-align:center;
+      padding:30px 15px;
+      font-size:0.9rem;
+      color:#aaa;
+      border-top:1px solid #222;
+    }
 
-/* Loader */
-#loader{
-  position:fixed;top:0;left:0;width:100%;height:100%;
-  background:#111;color:var(--accent);
-  display:flex;justify-content:center;align-items:center;flex-direction:column;
-  text-align:center;z-index:9999;overflow:hidden;padding:10px;
-}
-#loader-text p{margin:2px 0;font-size:14px}
-@media(max-width:600px){#loader-text p{font-size:10px}}
-</style>
+    @media(max-width:600px){
+      header img{height:90px;}
+      .hero h1{font-size:1.6rem;}
+      section h2{font-size:1.4rem;}
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- Loader -->
-<div id="loader"><div id="loader-text"></div></div>
-
-<header>
-  <div class="warning-box">⚠️ Kein echte Anwaltskanzlei – Es ist ein zertifiziertes Hobbyprojekt</div>
-  <div class="logo">
-    <img src="logo.png" alt="Kanzlei Schlimpert Logo" />
+  <!-- Loader -->
+  <div id="loader">
+    <div id="loader-text"></div>
   </div>
-</header>
 
-<main>
-<section class="hero">
-  <div>
-    <div class="slogan">Ihr Partner für Recht und Gerechtigkeit in Oederan.</div>
-    <p>Die Anwaltskanzlei Schlimpert steht für fachkundige, persönliche Rechtsberatung in Oederan. Mit Erfahrung, Engagement und Menschlichkeit vertreten wir Ihre Interessen.</p>
-    <a class="cta" href="#kontakt">Kontakt aufnehmen</a>
-  </div>
-</section>
+  <!-- Main Content -->
+  <div id="content">
+    <header>
+      <img src="logo.png" alt="Kanzlei Schlimpert Logo">
+    </header>
 
-<section id="ueber" class="container">
-<h2>Über uns</h2>
-<p class="lead">Die Kanzlei Schlimpert wurde mit dem Anspruch gegründet, juristische Beratung transparent, effizient und verständlich zu gestalten. Wir sind in Oederan verwurzelt und legen Wert auf persönliche Betreuung und individuelle Lösungen.</p>
-<div class="about">
-  <div class="text">
-    <p>Wir beraten Sie individuell und persönlich — ob außergerichtlich oder vor Gericht. Unsere Schwerpunkte liegen in der verständlichen Bereitstellung juristischen Wissens und in lösungsorientierter Prozessführung.</p>
-    <div class="values">
-      <div class="value">⚖️<div style="font-weight:700;margin-top:6px">Kompetenz</div></div>
-      <div class="value">🤝<div style="font-weight:700;margin-top:6px">Vertrauen</div></div>
-      <div class="value">📜<div style="font-weight:700;margin-top:6px">Erfahrung</div></div>
-      <div class="value">💬<div style="font-weight:700;margin-top:6px">Transparente Kommunikation</div></div>
+    <div class="hero">
+      <h1>Ihr Partner für Recht und Gerechtigkeit in Oederan.</h1>
+      <p>Die Anwaltskanzlei Schlimpert steht für fachkundige, persönliche Rechtsberatung in Oederan. Mit Erfahrung, Engagement und Menschlichkeit vertreten wir Ihre Interessen.</p>
+      <a href="#kontakt" class="btn">Kontakt aufnehmen</a>
     </div>
+
+    <section id="ueber">
+      <h2>Über uns</h2>
+      <p>Die Kanzlei Schlimpert wurde mit dem Anspruch gegründet, juristische Beratung transparent, effizient und verständlich zu gestalten. Wir sind in Oederan verwurzelt und legen Wert auf persönliche Betreuung und individuelle Lösungen.</p>
+      <div class="values">
+        <div class="value-item"><span>⚖️</span><p>Kompetenz</p></div>
+        <div class="value-item"><span>🤝</span><p>Vertrauen</p></div>
+        <div class="value-item"><span>📜</span><p>Erfahrung</p></div>
+        <div class="value-item"><span>💬</span><p>Transparente Kommunikation</p></div>
+      </div>
+    </section>
+
+    <section id="bereiche">
+      <h2>Tätigkeitsbereiche</h2>
+      <div class="areas">
+        <div class="area">
+          <h3>Zivilrecht</h3>
+          <p>Vertragsrecht, Schadensersatz, Nachbarschaftsstreitigkeiten.</p>
+        </div>
+        <div class="area">
+          <h3>Familienrecht</h3>
+          <p>Scheidung, Unterhalt, Sorgerecht – wir begleiten Sie mit Verständnis und Erfahrung.</p>
+        </div>
+        <div class="area">
+          <h3>Arbeitsrecht</h3>
+          <p>Kündigung, Abmahnung, Arbeitsvertrag – rechtssicher beraten und vertreten.</p>
+        </div>
+        <div class="area">
+          <h3>Verkehrsrecht</h3>
+          <p>Bußgeld, Unfallregulierung, Schadensabwicklung – wir helfen schnell und zuverlässig.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <h2>Kontakt</h2>
+      <p>Adresse: Markt, 09569 Oederan<br>
+         Telefon: Bald<br>
+         E-Mail: Bald</p>
+      <form>
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="E-Mail" required>
+        <textarea placeholder="Nachricht" required></textarea>
+        <button type="submit">Nachricht senden</button>
+      </form>
+    </section>
+
+    <footer>
+      © 2025 Anwaltskanzlei Schlimpert · Impressum · Datenschutzerklärung
+    </footer>
   </div>
-</div>
-</section>
 
-<section id="tätigkeiten" class="container">
-<h2>Tätigkeitsbereiche</h2>
-<p class="lead">Unsere Leistungen — klar und auf den Punkt gebracht.</p>
-<div class="services-grid">
-<article class="service"><h3>Zivilrecht</h3><p>Vertragsrecht, Schadensersatz und Nachbarschaftsstreitigkeiten. Wir prüfen Ansprüche, verhandeln und vertreten Sie bei Bedarf gerichtlich.</p></article>
-<article class="service"><h3>Familienrecht</h3><p>Scheidung, Unterhalt, Sorgerecht — wir begleiten Sie sensibel und zielorientiert durch alle notwendigen Schritte.</p></article>
-<article class="service"><h3>Arbeitsrecht</h3><p>Kündigung, Abmahnung, Arbeitsvertrag. Wir prüfen Ihre Ansprüche, formulieren Widersprüche und vertreten Sie gegenüber Arbeitgebern.</p></article>
-<article class="service"><h3>Verkehrsrecht</h3><p>Bußgeld, Unfallregulierung und Schadensansprüche — wir helfen Ihnen, Ihre Ansprüche durchzusetzen und Fahrverbote abzuwehren.</p></article>
-</div>
-</section>
+  <script>
+    const loader = document.getElementById("loader");
+    const loaderText = document.getElementById("loader-text");
+    const content = document.getElementById("content");
 
-<section id="kontakt" class="container">
-<h2>Kontakt</h2>
-<p class="lead">Nehmen Sie Kontakt auf — wir melden uns so schnell wie möglich.</p>
-<div class="contact-grid">
-<form id="contactForm" onsubmit="return handleSubmit(event)">
-<label for="name">Name</label><input id="name" name="name" type="text" required>
-<label for="email">E-Mail</label><input id="email" name="email" type="email" required>
-<label for="message">Nachricht</label><textarea id="message" name="message" rows="6" required></textarea>
-<button type="submit">Nachricht senden</button>
-</form>
-<aside style="min-width:0">
-<div style="background:#1c1c1c;padding:18px;border-radius:8px;border:1px solid #333;margin-bottom:18px">
-<h3>Unsere Adresse</h3>
-<p>Markt<br>09569 Oederan</p>
-<p>Telefon: Comming Soon<br>E-Mail: Comming Soon</p>
-<p><strong>Öffnungszeiten</strong><br>Mo–Fr: 9:00–14:00</p>
-</div>
-</aside>
-</div>
-</section>
-</main>
+    const paragraphs = [
+      "§ 1 GG – Die Würde des Menschen ist unantastbar. (Grundgesetz)",
+      "§ 242 BGB – Leistung nach Treu und Glauben. (Bürgerliches Gesetzbuch)",
+      "§ 823 BGB – Schadensersatzpflicht. (Bürgerliches Gesetzbuch)",
+      "§ 138 BGB – Sittenwidriges Rechtsgeschäft. (Bürgerliches Gesetzbuch)",
+      "§ 211 StGB – Mord. (Strafgesetzbuch)",
+      "§ 212 StGB – Totschlag. (Strafgesetzbuch)",
+      "§ 263 StGB – Betrug. (Strafgesetzbuch)",
+      "§ 611a BGB – Arbeitsvertrag. (Bürgerliches Gesetzbuch)",
+      "§ 626 BGB – Fristlose Kündigung. (Bürgerliches Gesetzbuch)",
+      "§ 280 BGB – Schadensersatz wegen Pflichtverletzung. (Bürgerliches Gesetzbuch)",
+      "§ 305 BGB – Allgemeine Geschäftsbedingungen. (Bürgerliches Gesetzbuch)",
+      "§ 355 BGB – Widerrufsrecht bei Verbraucherverträgen. (Bürgerliches Gesetzbuch)",
+      "§ 929 BGB – Übereignung. (Bürgerliches Gesetzbuch)",
+      "§ 985 BGB – Herausgabeanspruch. (Bürgerliches Gesetzbuch)",
+      "§ 104 BGB – Geschäftsunfähigkeit. (Bürgerliches Gesetzbuch)",
+      "§ 119 BGB – Anfechtbarkeit wegen Irrtums. (Bürgerliches Gesetzbuch)",
+      "§ 158 BGB – Bedingung und Zeitbestimmung. (Bürgerliches Gesetzbuch)",
+      "§ 433 BGB – Kaufvertrag. (Bürgerliches Gesetzbuch)",
+      "§ 535 BGB – Mietvertrag. (Bürgerliches Gesetzbuch)",
+      "§ 823 II BGB – Schutzgesetzverletzung. (Bürgerliches Gesetzbuch)",
+      "§ 1 ArbGG – Arbeitsgerichtsbarkeit. (Arbeitsgerichtsgesetz)",
+      "§ 17 TzBfG – Kündigungsschutz. (Teilzeit- und Befristungsgesetz)",
+      "Art. 20 GG – Staatsstrukturprinzipien. (Grundgesetz)",
+      "Art. 3 GG – Gleichheit vor dem Gesetz. (Grundgesetz)",
+      "Art. 5 GG – Meinungsfreiheit. (Grundgesetz)"
+    ];
 
-<footer>
-<p style="color:#bbb;margin:0">© Anwaltskanzlei Schlimpert — Hobbyprojekt | Impressum | Datenschutzerklärung</p>
-</footer>
-
-<script>
-// Loader mit 25 Paragraphen in 3 Sekunden
-const loaderText=document.getElementById('loader-text');
-const totalParagraphs=25;
-let count=0;
-const interval=3000/totalParagraphs;
-const paragraphs=[];
-for(let i=1;i<=totalParagraphs;i++){paragraphs.push(`Paragraf ${i}: Thema XYZ`);}
-const timer=setInterval(()=>{
-  if(count>=totalParagraphs){
-    clearInterval(timer);
-    const loader=document.getElementById('loader');
-    loader.style.transition='opacity 0.5s';
-    loader.style.opacity=0;
-    setTimeout(()=>loader.style.display='none',500);
-    // Sektionen sichtbar machen
-    document.querySelectorAll('section').forEach(s=>s.classList.add('visible'));
-  } else {
-    const p=document.createElement('p');
-    p.textContent=paragraphs[count];
-    loaderText.appendChild(p);
-    count++;
-  }
-},interval);
-
-// Scroll-Fade-Up für Sektionen
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){entry.target.classList.add('visible');}
-  });
-},{threshold:0.2});
-document.querySelectorAll('section').forEach(s=>observer.observe(s));
-
-// Kontaktformular (lokal)
-function handleSubmit(e){
-  e.preventDefault();
-  const name=document.getElementById('name').value.trim();
-  const email=document.getElementById('email').value.trim();
-  const message=document.getElementById('message').value.trim();
-  if(!name||!email||!message){alert('Bitte alle Felder ausfüllen.'); return false;}
-  alert('Danke — Ihre Nachricht wurde (lokal) erfasst.');
-  document.getElementById('contactForm').reset();
-  return false;
-}
-</script>
+    let index = 0;
+    function showNext() {
+      if (index < paragraphs.length) {
+        loaderText.innerHTML = `<p>${paragraphs[index]}</p>`;
+        requestAnimationFrame(() => {
+          loaderText.querySelector('p').style.opacity = 1;
+        });
+        index++;
+        setTimeout(() => {
+          loaderText.querySelector('p').style.opacity = 0;
+          setTimeout(showNext, 80); // Übergang zwischen Paragraphen
+        }, 120);
+      } else {
+        loader.style.opacity = 0;
+        setTimeout(() => {
+          loader.style.display = "none";
+          content.style.opacity = 1;
+          content.style.transform = "translateY(0)";
+        }, 500);
+      }
+    }
+    window.addEventListener("load", () => {
+      showNext();
+    });
+  </script>
 </body>
 </html>
