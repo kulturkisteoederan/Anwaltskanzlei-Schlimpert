@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kanzlei Schlimpert — Oederan</title>
+  <meta name="description" content="Anwaltskanzlei Schlimpert in Oederan — fachkundige, persönliche Rechtsberatung." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f7f7f7;
+      --dark:#111111;
+      --muted:#777;
+      --accent:#1f4a7a;
+      --gold:#c9a84a;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:"Lato",system-ui,Arial;background:var(--bg);color:var(--dark);margin:0;line-height:1.6}
+    a{color:var(--accent);text-decoration:none}
+
+    header{background:#fff;padding:28px 16px;border-bottom:1px solid #e6e6e6;position:relative}
+    .container{max-width:var(--max-width);margin:0 auto;padding:0 16px}
+
+    /* Logo */
+    .logo{display:flex;align-items:center;gap:16px;justify-content:center}
+    .logo img{height:86px;width:auto;object-fit:contain}
+
+    /* Warnhinweis */
+    .warning-box{
+      position:absolute;
+      top:10px;
+      right:10px;
+      background:#c00;
+      color:#fff;
+      font-size:14px;
+      padding:6px 12px;
+      border-radius:6px;
+      font-weight:700;
+      animation: blink 2s infinite;
+    }
+    @keyframes blink{
+      0%,100%{opacity:1}
+      50%{opacity:0.4}
+    }
+
+    /* Hero ohne Hintergrundbild */
+    .hero{
+      min-height:56vh;
+      background:linear-gradient(180deg,#f7f7f7 0%,#eaeaea 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:48px 16px;
+    }
+    .hero .slogan{font-family:"Playfair Display",serif;font-size:28px;margin-bottom:12px;color:var(--dark)}
+    .hero p{max-width:820px;color:var(--muted)}
+    .cta{display:inline-block;background:var(--gold);color:#111;padding:12px 22px;border-radius:6px;font-weight:700;margin-top:18px}
+
+    /* Sections */
+    section{padding:56px 0}
+    h2{font-family:"Playfair Display",serif;font-size:26px;margin:0 0 12px}
+    p.lead{color:var(--muted);max-width:860px}
+
+    /* About */
+    .about{display:flex;gap:32px;align-items:center;flex-wrap:wrap}
+    .about .text{flex:1}
+    .values{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .value{background:#fff;padding:12px;border-radius:8px;border:1px solid #f0f0f0;min-width:140px;text-align:center}
+
+    /* Services */
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .service{background:#fff;padding:18px;border-radius:8px;border:1px solid #eee}
+    .service h3{margin-top:0}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:24px}
+    form{background:#fff;padding:18px;border-radius:8px;border:1px solid #eee}
+    label{display:block;margin-bottom:6px;font-weight:600}
+    input,textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:6px;margin-bottom:12px}
+    button[type=submit]{background:var(--accent);color:#fff;padding:12px 16px;border:none;border-radius:6px;font-weight:700;cursor:pointer}
+
+    /* Footer */
+    footer{background:#111;color:#fff;padding:24px 0;text-align:center}
+    footer a{color:var(--gold)}
+
+    @media (max-width:900px){
+      .contact-grid{grid-template-columns:1fr}
+      .hero{min-height:48vh}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="warning-box">⚠️ Kein echtes Anwaltsbüro – Hobbyprojekt</div>
+    <div class="container logo">
+      <!-- Nur dein Logo -->
+      <img src="logo.png" alt="Kanzlei Schlimpert Logo" />
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="slogan">Ihr Partner für Recht und Gerechtigkeit in Oederan.</div>
+        <p>Die Anwaltskanzlei Schlimpert steht für fachkundige, persönliche Rechtsberatung in Oederan. Mit Erfahrung, Engagement und Menschlichkeit vertreten wir Ihre Interessen.</p>
+        <a class="cta" href="#kontakt">Kontakt aufnehmen</a>
+      </div>
+    </section>
+
+    <section id="ueber" class="container">
+      <h2>Über uns</h2>
+      <p class="lead">Die Kanzlei Schlimpert wurde mit dem Anspruch gegründet, juristische Beratung transparent, effizient und verständlich zu gestalten. Wir sind in Oederan verwurzelt und legen Wert auf persönliche Betreuung und individuelle Lösungen.</p>
+
+      <div class="about" style="margin-top:20px">
+        <div class="text">
+          <p>Wir beraten Sie individuell und persönlich — ob außergerichtlich oder vor Gericht. Unsere Schwerpunkte liegen in der verständlichen Bereitstellung juristischen Wissens und in lösungsorientierter Prozessführung.</p>
+
+          <div class="values">
+            <div class="value">⚖️<div style="font-weight:700;margin-top:6px">Kompetenz</div></div>
+            <div class="value">🤝<div style="font-weight:700;margin-top:6px">Vertrauen</div></div>
+            <div class="value">📜<div style="font-weight:700;margin-top:6px">Erfahrung</div></div>
+            <div class="value">💬<div style="font-weight:700;margin-top:6px">Transparente Kommunikation</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tätigkeiten" class="container">
+      <h2>Tätigkeitsbereiche</h2>
+      <p class="lead">Unsere Leistungen — klar und auf den Punkt gebracht.</p>
+
+      <div class="services-grid" style="margin-top:18px">
+        <article class="service">
+          <h3>Zivilrecht</h3>
+          <p>Vertragsrecht, Schadensersatz und Nachbarschaftsstreitigkeiten. Wir prüfen Ansprüche, verhandeln und vertreten Sie bei Bedarf gerichtlich.</p>
+        </article>
+
+        <article class="service">
+          <h3>Familienrecht</h3>
+          <p>Scheidung, Unterhalt, Sorgerecht — wir begleiten Sie sensibel und zielorientiert durch alle notwendigen Schritte.</p>
+        </article>
+
+        <article class="service">
+          <h3>Arbeitsrecht</h3>
+          <p>Kündigung, Abmahnung, Arbeitsvertrag. Wir prüfen Ihre Ansprüche, formulieren Widersprüche und vertreten Sie gegenüber Arbeitgebern.</p>
+        </article>
+
+        <article class="service">
+          <h3>Verkehrsrecht</h3>
+          <p>Bußgeld, Unfallregulierung und Schadensansprüche — wir helfen Ihnen, Ihre Ansprüche durchzusetzen und Fahrverbote abzuwehren.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="kontakt" class="container">
+      <h2>Kontakt</h2>
+      <p class="lead">Nehmen Sie Kontakt auf — wir melden uns so schnell wie möglich.</p>
+
+      <div class="contact-grid" style="margin-top:18px">
+        <form id="contactForm" onsubmit="return handleSubmit(event)">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+
+          <label for="email">E-Mail</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="message">Nachricht</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+
+          <button type="submit">Nachricht senden</button>
+        </form>
+
+        <aside style="min-width:0">
+          <div style="background:#fff;padding:18px;border-radius:8px;border:1px solid #eee;margin-bottom:18px">
+            <h3>Unsere Adresse</h3>
+            <p>Marktstraße 12<br>09569 Oederan</p>
+            <p>Telefon: 037292 / 12345<br>E-Mail: kontakt@kanzlei-schlimpert.de</p>
+            <p><strong>Öffnungszeiten</strong><br>Mo–Fr: 9:00–17:00</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p style="color:#bbb;margin:0">© Kanzlei Schlimpert — Hobbyprojekt | Impressum | Datenschutzerklärung</p>
+  </footer>
+
+  <script>
+    function handleSubmit(e){
+      e.preventDefault();
+      const name=document.getElementById('name').value.trim();
+      const email=document.getElementById('email').value.trim();
+      const message=document.getElementById('message').value.trim();
+      if(!name||!email||!message){
+        alert('Bitte alle Felder ausfüllen.');
+        return false;
+      }
+      alert('Danke — Ihre Nachricht wurde (lokal) erfasst.');
+      document.getElementById('contactForm').reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
