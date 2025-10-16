@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anwaltskanzlei Schlimpert – Archiv</title>
+  <style>
+    :root {
+      --primary: #002244;
+      --accent: #0055a5;
+      --light: #f9f9fb;
+      --text: #222;
+      --muted: #666;
+      --radius: 12px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* --- HEADER --- */
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--primary);
+      color: white;
+      box-shadow: var(--shadow);
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 25px;
+    }
+
+    .nav-container h1 {
+      font-size: 1.6rem;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: opacity 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    /* --- HERO --- */
+    .hero {
+      background: linear-gradient(rgba(0, 34, 68, 0.8), rgba(0, 34, 68, 0.8)), url('https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 25px;
+      font-size: 1.1rem;
+      color: #e0e0e0;
+    }
+
+    .hero a {
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .hero a:hover {
+      background: #0073e6;
+    }
+
+    /* --- CONTENT --- */
+    main {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+
+    .info-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background: #e9ecef;
+      color: var(--muted);
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <h1>Anwaltskanzlei Schlimpert</h1>
+      <nav>
+        <a href="#">Startseite</a>
+        <a href="#">Über uns</a>
+        <a href="#">Archiv</a>
+        <a href="#">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2>Willkommen im digitalen Archiv</h2>
+    <p>Hier erhalten Sie Zugriff auf aktuelle Dokumente, rechtliche Informationen und Fallunterlagen der Anwaltskanzlei Schlimpert.</p>
+    <a href="login.html">Jetzt einloggen</a>
+  </section>
+
+  <main>
+    <div class="info-section">
+      <div class="card">
+        <h3>Neue Dokumente</h3>
+        <p>Neue Unterlagen für den Fall XY stehen ab sofort zur Verfügung. Melden Sie sich an, um auf die aktuellen Dateien zuzugreifen.</p>
+      </div>
+
+      <div class="card">
+        <h3>Rechtliche Updates</h3>
+        <p>Unser Archiv wurde mit neuen rechtlichen Informationen ergänzt. Bleiben Sie auf dem neuesten Stand.</p>
+      </div>
+
+      <div class="card">
+        <h3>Veröffentlichungen</h3>
+        <p>Informieren Sie sich über die jüngsten Veröffentlichungen und juristischen Beiträge unserer Kanzlei.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Anwaltskanzlei Schlimpert – Alle Rechte vorbehalten.
+  </footer>
+
+</body>
+</html>

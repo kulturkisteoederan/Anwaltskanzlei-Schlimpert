@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login – Anwaltskanzlei Schlimpert Archiv</title>
+  <style>
+    :root {
+      --primary: #002244;
+      --accent: #0055a5;
+      --bg: #f5f7fa;
+      --radius: 12px;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      color: #222;
+      background: linear-gradient(rgba(0, 34, 68, 0.8), rgba(0, 34, 68, 0.8)),
+        url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1500&q=80')
+        center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: white;
+      padding: 40px 35px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      animation: fadeIn 0.7s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .login-container h2 {
+      color: var(--primary);
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .login-container input:focus {
+      border-color: var(--accent);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0, 85, 165, 0.2);
+    }
+
+    .login-container button {
+      width: 100%;
+      background-color: var(--accent);
+      color: white;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.25s, transform 0.2s;
+    }
+
+    .login-container button:hover {
+      background-color: #0073e6;
+      transform: translateY(-2px);
+    }
+
+    .login-container p {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .login-container a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .login-container a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login zum Kanzlei-Archiv</h2>
+    <form id="loginForm">
+      <input type="text" id="username" name="username" placeholder="Benutzername" required>
+      <input type="password" id="password" name="password" placeholder="Passwort" required>
+      <button type="submit">Einloggen</button>
+    </form>
+    <p><a href="index.html">Zurück zur Startseite</a></p>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      // Beispielhafte Zugangsdaten (nur für Demo)
+      if (username === 'anwalt' && password === 'passwort123') {
+        window.location.href = 'case_list.html';
+      } else {
+        alert('❌ Falscher Benutzername oder Passwort.');
+      }
+    });
+  </script>
+</body>
+</html>
