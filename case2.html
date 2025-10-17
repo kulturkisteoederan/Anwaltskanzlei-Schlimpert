@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fall #0002 – Marcel Kempe</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #002244;
+      --accent: #0055a5;
+      --bg: #f5f7fa;
+      --muted: #6b7280;
+      --radius: 12px;
+      --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--primary), #003366);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 1.1rem;
+      color: #c9d8f0;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px 50px;
+      flex: 1;
+    }
+
+    .case-section {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+      margin-bottom: 25px;
+      transition: transform 0.2s;
+    }
+
+    .case-section:hover {
+      transform: translateY(-3px);
+    }
+
+    h2 {
+      color: var(--accent);
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    p {
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    strong {
+      color: var(--primary);
+    }
+
+    ul, ol {
+      margin-left: 25px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .info-item {
+      background: #f0f5ff;
+      padding: 12px 15px;
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+
+    .info-item strong {
+      display: block;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    footer {
+      background: #e9ecef;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      background: var(--accent);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: var(--shadow);
+    }
+
+    .back-button:hover {
+      background: #0073e6;
+      transform: translateY(-2px);
+    }
+
+    .back-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+      h2 {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Anwaltskanzlei Schlimpert</h1>
+    <p>Aktenzeichen: <strong>#0002 – Marcel Kempe</strong></p>
+  </header>
+
+  <main>
+    <div class="case-section">
+      <h2><i class="fas fa-user"></i> Mandantendaten</h2>
+      <div class="info-grid">
+        <div class="info-item"><strong>Name:</strong> Marcel Kempe</div>
+        <div class="info-item"><strong>Geburtsdatum:</strong> 12.12.1973</div>
+        <div class="info-item"><strong>Wohnort:</strong> Görbersdorf, Oederan, Siedlung 3</div>
+        <div class="info-item"><strong>Verfahrensstand:</strong> Anzeige erstattet, Ermittlungen laufen</div>
+        <div class="info-item"><strong>Datum der Vorwürfe:</strong> 17.10.2025 – 17:30 Uhr</div>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h2><i class="fas fa-gavel"></i> Gegenstand des Verfahrens</h2>
+      <p>Dem Mandanten <strong>Marcel Kempe</strong> wird vorgeworfen, am <strong>17.10.2025 gegen 17:30 Uhr</strong> an der <strong>Bushaltestelle am Markt, 09569 Oederan</strong> mehrere Personen verbal belästigt sowie wiederholt unerwünschten Kontakt gesucht zu haben.</p>
+      <p>Hauptbetroffener ist der stellvertretende Kanzleileiter <strong>Lukas Leibelt</strong>. Weitere Betroffene sind die Rechtsanwälte <strong>Max Walter</strong> und <strong>Sammy Graßhoff</strong> sowie eine unbeteiligte Passantin, <strong>Lea Walter</strong>.</p>
+      <p>Es bestehen Hinweise auf fortgesetztes <strong>Stalking-Verhalten</strong>.</p>
+    </div>
+
+    <div class="case-section">
+      <h2><i class="fas fa-scale-balanced"></i> Rechtliche Einordnung</h2>
+      <p><strong>Belästigung (§ 185 StGB):</strong> Beleidigende oder entwürdigende Äußerungen in der Öffentlichkeit können als strafbare Beleidigung gewertet werden.</p>
+      <p><strong>Nachstellung (Stalking, § 238 StGB):</strong> Wiederholte Kontaktversuche, Überwachung und das Auflauern an öffentlichen Orten können die Voraussetzungen für Nachstellung erfüllen.</p>
+    </div>
+
+    <div class="case-section">
+      <h2><i class="fas fa-file-alt"></i> Aktueller Stand</h2>
+      <p>Die Kanzlei hat umgehend Anzeige erstattet. Die Polizei hat erste Ermittlungen aufgenommen. Der Fall wurde an die zuständige Staatsanwaltschaft weitergeleitet.</p>
+      <p>Es liegen <strong>WhatsApp-Nachrichten</strong> sowie die Zeugenaussage von Rechtsanwalt <strong>Sammy Graßhoff</strong> vor.</p>
+    </div>
+
+    <div class="case-section">
+      <h2><i class="fas fa-briefcase"></i> Maßnahmen der Kanzlei Schlimpert</h2>
+      <ul>
+        <li>Sofortige Kontaktaufnahme zur Polizei Oederan.</li>
+        <li>Erfassung des Vorfalls durch interne Dokumentation.</li>
+        <li>Einleitung von Schutzmaßnahmen für betroffene Mitarbeitende.</li>
+        <li>Prüfung rechtlicher Schritte im zivilrechtlichen Bereich.</li>
+      </ul>
+    </div>
+
+    <div class="case-section">
+      <h2><i class="fas fa-forward"></i> Weiteres Vorgehen</h2>
+      <ol>
+        <li>Kooperation mit den Strafverfolgungsbehörden.</li>
+        <li>Erweiterung der Beweismittel (Videoüberwachung, weitere Zeugen).</li>
+        <li>Eventuelle zivilrechtliche Unterlassungsklage bei fortgesetztem Verhalten.</li>
+        <li>Fortlaufende Risikoanalyse wegen möglicher Bedrohungslage.</li>
+      </ol>
+    </div>
+
+    <div class="back-container">
+      <a href="case_list.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Zurück zur Fallübersicht
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Anwaltskanzlei Schlimpert – Alle Rechte vorbehalten.
+  </footer>
+
+</body>
+</html
