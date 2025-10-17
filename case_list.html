@@ -234,6 +234,7 @@
 
   <main>
     <div class="case-list">
+      <!-- Fall 1 -->
       <div class="case" onclick="showModal(1)">
         <div class="case-info">
           <div class="case-title">Marcel Kempe: Tabakverkauf an Minderjährige + Schwarzarbeit</div>
@@ -241,7 +242,18 @@
         </div>
         <i class="fas fa-arrow-right icon"></i>
       </div>
+
+      <!-- Fall 2 -->
+      <div class="case" onclick="showModal(2)">
+        <div class="case-info">
+          <div class="case-title">Marcel Kempe: Belästigung</div>
+          <div class="case-reference">Aktenzeichen: #0002</div>
+        </div>
+        <i class="fas fa-arrow-right icon"></i>
+      </div>
+    </div>
   </main>
+
   <footer>
     &copy; 2025 Anwaltskanzlei Schlimpert – Alle Rechte vorbehalten.
   </footer>
@@ -272,7 +284,14 @@
 
     function checkPassword() {
       const password = document.getElementById("password").value;
-      if (password === "passwort123") {
+
+      // Beispielhafte Passwortkontrolle
+      const passwords = {
+        1: "passwort123",
+        2: "belästigung2025"
+      };
+
+      if (password === passwords[currentCase]) {
         window.location.href = `case${currentCase}.html`;
       } else {
         alert("❌ Falsches Passwort. Bitte erneut versuchen.");
@@ -282,7 +301,4 @@
     window.onclick = function (event) {
       const modal = document.getElementById("passwordModal");
       if (event.target === modal) closeModal();
-    };
-  </script>
-</body>
-</html>
+   
