@@ -275,11 +275,14 @@
     function showModal(caseId) {
       currentCase = caseId;
       document.getElementById("passwordModal").style.display = "flex";
+      document.getElementById("password").value = "";
+      document.getElementById("password").focus();
     }
 
     function closeModal() {
       document.getElementById("passwordModal").style.display = "none";
       document.getElementById("password").value = "";
+      currentCase = null;
     }
 
     function checkPassword() {
@@ -295,10 +298,17 @@
         window.location.href = `case${currentCase}.html`;
       } else {
         alert("❌ Falsches Passwort. Bitte erneut versuchen.");
+        document.getElementById("password").value = "";
+        document.getElementById("password").focus();
       }
     }
 
+    // Modal schließen, wenn außerhalb geklickt wird
     window.onclick = function (event) {
       const modal = document.getElementById("passwordModal");
       if (event.target === modal) closeModal();
-   
+    }
+  </script>
+
+</body>
+</html>
